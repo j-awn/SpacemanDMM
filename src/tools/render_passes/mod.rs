@@ -8,6 +8,7 @@ mod structures;
 mod icon_smoothing;
 mod icon_smoothing_2020;
 mod smart_cables;
+mod goon;
 
 pub use self::transit_tube::TransitTube;
 pub use self::random::Random;
@@ -15,6 +16,7 @@ pub use self::structures::{GravityGen, Spawners};
 pub use self::icon_smoothing::IconSmoothing as IconSmoothing2016;
 pub use self::icon_smoothing_2020::IconSmoothing;
 pub use self::smart_cables::SmartCables;
+pub use self::goon::GoonRandom;
 
 /// A map rendering pass.
 ///
@@ -112,6 +114,7 @@ pub const RENDER_PASSES: &[RenderPassInfo] = &[
     pass!(IconSmoothing2016, "icon-smoothing-2016", "Emulate the icon smoothing subsystem (xxalpha, 2016).", false),
     pass!(IconSmoothing, "icon-smoothing", "Emulate the icon smoothing subsystem (Rohesie, 2020).", true),
     pass!(SmartCables, "smart-cables", "Handle smart cable layout.", true),
+    pass!(GoonRandom, "goon-random", "Handle goonstation random item spawners.", true)
 ];
 
 pub fn configure(include: &str, exclude: &str) -> Vec<Box<dyn RenderPass>> {
